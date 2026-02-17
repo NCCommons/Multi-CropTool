@@ -1,7 +1,5 @@
 <?php
-require_once __DIR__ . '/../vendor/autoload.php';
-
-require_once __DIR__ . '/config.php';
+include_once __DIR__ . '/config.php';
 
 use MediaWiki\OAuthClient\Client;
 use MediaWiki\OAuthClient\ClientConfig;
@@ -18,25 +16,3 @@ session_start();
 //---
 $username = $_SESSION['username'] ?? '';
 //---
-function echo_login()
-{
-	global $username, $tool_folder;
-	$safeUsername = htmlspecialchars($username); // Escape characters to prevent XSS
-
-	if ($username == '') {
-		echo <<<HTML
-			You are not authenticated.<br />
-			Go to this URL to authorize this tool:<br />
-			<a href='auth.php?a=login'>Login</a><br />
-		HTML;
-	} else {
-		echo <<<HTML
-			You are authenticated as $safeUsername.<br />
-			Continue to <a href='auth.php?a=edit'>edit</a><br>
-			<a href='logout.php'>logout</a>
-		HTML;
-	};
-	//---
-};
-
-// echo_login();

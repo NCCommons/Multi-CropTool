@@ -6,13 +6,11 @@ if (isset($_REQUEST['test']) || $_SERVER['SERVER_NAME'] == 'localhost') {
     error_reporting(E_ALL);
 };
 
-require_once __DIR__ . '/../vendor/autoload.php';
-
-require_once __DIR__ . '/config.php';
+include_once __DIR__ . '/config.php';
 
 function get_action($action)
 {
-    $allowedActions = ['login', 'callback', 'edit', 'api', 'index', 'userinfo', 'upload'];
+    $allowedActions = ['login', 'callback', 'edit', 'api', 'index', 'userinfo', 'upload', 'user_infos'];
 
     if (!in_array($action, $allowedActions)) {
         // Handle error or redirect to a default action
@@ -28,6 +26,6 @@ $actionFile = get_action($action);
 
 // Redirect to the corresponding action file
 // header("Location: auth/" . $actionFile);
-require_once __DIR__ . "/" . $actionFile . '.php';
+include_once __DIR__ . "/" . $actionFile . '.php';
 
 // exit;

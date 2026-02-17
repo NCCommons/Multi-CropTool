@@ -1,9 +1,7 @@
 <?php
 header('Content-type: application/json; charset=utf-8');
 
-require_once __DIR__ . '/../vendor/autoload.php';
-
-require_once __DIR__ . '/config.php';
+include_once __DIR__ . '/config.php';
 
 use MediaWiki\OAuthClient\Client;
 use MediaWiki\OAuthClient\ClientConfig;

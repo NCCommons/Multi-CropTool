@@ -1,8 +1,6 @@
 <?php
 
-require_once __DIR__ . '/../vendor/autoload.php';
-
-require_once __DIR__ . '/config.php';
+include_once __DIR__ . '/config.php';
 
 use MediaWiki\OAuthClient\Client;
 use MediaWiki\OAuthClient\ClientConfig;
@@ -32,7 +30,7 @@ $requestToken = new Token(
 );
 
 // Send an HTTP request to the wiki to retrieve an Access Token.
-$accessToken1 = $client->complete($requestToken,  $_GET['oauth_verifier']);
+$accessToken1 = $client->complete($requestToken, $_GET['oauth_verifier']);
 
 // At this point, the user is authenticated, and the access token can be used to make authenticated
 // API requests to the wiki. You can store the Access Token in the session or other secure
@@ -43,7 +41,7 @@ $_SESSION['access_secret'] = $accessToken1->secret;
 // You also no longer need the Request Token.
 unset($_SESSION['request_key'], $_SESSION['request_secret']);
 
-require_once __DIR__ . '/userinfo.php';
+include_once __DIR__ . '/user_infos.php';
 // The demo continues in demo/edit.php
 echo "Continue to <a href='auth.php?a=edit'>edit</a><br>";
 echo "Continue to <a href='auth.php?a=index'>index</a><br>";

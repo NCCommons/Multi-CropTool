@@ -1,5 +1,5 @@
 <?php
-
+//---
 if (isset($_REQUEST['test']) || $_SERVER['SERVER_NAME'] == 'localhost') {
     ini_set('display_errors', 1);
     ini_set('display_startup_errors', 1);
@@ -8,11 +8,7 @@ if (isset($_REQUEST['test']) || $_SERVER['SERVER_NAME'] == 'localhost') {
 //---
 require_once __DIR__ . "/text.php";
 //---
-// get the root path from __FILE__ , split before public_html
-// split the file path on the public_html directory
-$pathParts = explode('public_html', __FILE__);
-// the root path is the first part of the split file path
-$ROOT_PATH = $pathParts[0];
+$ROOT_PATH = explode('public_html', __FILE__)[0];
 //---
 $tool_folder = "c2ncc";
 //---

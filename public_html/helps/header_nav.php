@@ -77,7 +77,7 @@ function header_nav_tag($title="title", $page='', $log_lis='') {
                                 </a>
                             </li>
                         </ul>
-                        <hr class="d-lg-none text-black-50">
+                        <hr class="d-lg-none text-dark-subtle text-50">
                         <ul class="navbar-nav flex-row flex-wrap bd-navbar-nav ms-lg-auto">
                             <li class="nav-item col col-lg-auto dropdown">
                                 $them_li

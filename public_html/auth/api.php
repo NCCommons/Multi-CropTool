@@ -1,8 +1,8 @@
 <?php
-header('Content-type: application/json; charset=utf-8');
-require_once __DIR__ . '/../vendor/autoload.php';
 
-require_once __DIR__ . '/config.php';
+header('Content-type: application/json; charset=utf-8');
+
+include_once __DIR__ . '/config.php';
 
 
 use MediaWiki\OAuthClient\Client;
@@ -27,10 +27,11 @@ function get_edit_token()
 {
     global $client, $accessToken, $apiUrl;
     // Example 3: make an edit (getting the edit token first).
-    $editToken = json_decode($client->makeOAuthCall(
+    $response = $client->makeOAuthCall(
         $accessToken,
         "$apiUrl?action=query&meta=tokens&format=json"
-    ))->query->tokens->csrftoken;
+    );
+    $editToken = json_decode($response)->query->tokens->csrftoken;
     //---
     return $editToken;
 }
@@ -129,7 +130,7 @@ function upload($post)
 function find_exists()
 {
     // Sanitize the filename to prevent malicious code injection
-    $sanitizedFilename = filter_var($_REQUEST['filename'], FILTER_SANITIZE_STRING);
+    $sanitizedFilename = filter_var($_GET['filename'], FILTER_SANITIZE_STRING);
     $filename = $sanitizedFilename ?? '';
 
     $params = [

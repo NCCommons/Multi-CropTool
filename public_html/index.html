@@ -4,34 +4,29 @@
 <head>
     <title translate>CropTool</title>
     <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
-
-    <script>
-
-        // if (window.location.protocol != "https:")
-        //     window.location.href = "https:" + window.location.href.substring(window.location.protocol.length);
-
-    </script>
-
+    <!-- <script src="scripts.js"></script> -->
     <link rel="stylesheet" type="text/css"
-        href="//tools-static.wmflabs.org/cdnjs/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+        href="https://tools-static.wmflabs.org/cdnjs/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css"
-        href="//tools-static.wmflabs.org/cdnjs/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+        href="https://tools-static.wmflabs.org/cdnjs/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css"
-        href="//tools-static.wmflabs.org/cdnjs/ajax/libs/cropperjs/1.3.4/cropper.css">
+        href="https://tools-static.wmflabs.org/cdnjs/ajax/libs/cropperjs/1.3.4/cropper.css">
     <link rel="stylesheet" href="css/vendor-071b981dc9.css">
     <link rel="stylesheet" href="css/app-6b96dd5a43.css">
-    <script src="//tools-static.wmflabs.org/cdnjs/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="//tools-static.wmflabs.org/cdnjs/ajax/libs/bootstrap/5.3.0/js/bootstrap.min.js"></script>
-    <script src="//tools-static.wmflabs.org/cdnjs/ajax/libs/angular.js/1.6.5/angular.min.js"></script>
-    <script src="//tools-static.wmflabs.org/cdnjs/ajax/libs/angular.js/1.6.5/angular-sanitize.min.js"></script>
+    <script src="https://tools-static.wmflabs.org/cdnjs/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://tools-static.wmflabs.org/cdnjs/ajax/libs/popper.js/2.11.8/umd/popper.min.js"></script>
+    <script src="https://tools-static.wmflabs.org/cdnjs/ajax/libs/bootstrap/5.3.0/js/bootstrap.min.js"></script>
+    <script src="https://tools-static.wmflabs.org/cdnjs/ajax/libs/angular.js/1.6.5/angular.min.js"></script>
+    <script src="https://tools-static.wmflabs.org/cdnjs/ajax/libs/angular.js/1.6.5/angular-sanitize.min.js"></script>
     <script
-        src="//tools-static.wmflabs.org/cdnjs/ajax/libs/angular-ui-bootstrap/2.5.0/ui-bootstrap-tpls.min.js"></script>
-    <script src="//tools-static.wmflabs.org/cdnjs/ajax/libs/cropperjs/1.3.4/cropper.min.js"></script>
+        src="https://tools-static.wmflabs.org/cdnjs/ajax/libs/angular-ui-bootstrap/2.5.6/ui-bootstrap-tpls.min.js"></script>
+    <script src="https://tools-static.wmflabs.org/cdnjs/ajax/libs/cropperjs/1.3.4/cropper.min.js"></script>
     <script
-        src="//tools-static.wmflabs.org/cdnjs/ajax/libs/angular-local-storage/0.7.1/angular-local-storage.min.js"></script>
-    <script src="//tools-static.wmflabs.org/cdnjs/ajax/libs/angular-translate/2.17.0/angular-translate.min.js"></script>
+        src="https://tools-static.wmflabs.org/cdnjs/ajax/libs/angular-local-storage/0.7.1/angular-local-storage.min.js"></script>
     <script
-        src="//tools-static.wmflabs.org/cdnjs/ajax/libs/angular-translate/2.17.0/angular-translate-loader-static-files/angular-translate-loader-static-files.min.js"></script>
+        src="https://tools-static.wmflabs.org/cdnjs/ajax/libs/angular-translate/2.17.0/angular-translate.min.js"></script>
+    <script
+        src="https://tools-static.wmflabs.org/cdnjs/ajax/libs/angular-translate/2.17.0/angular-translate-loader-static-files/angular-translate-loader-static-files.min.js"></script>
     <script src="js/vendor-9a167b2da8.js"></script>
     <script src="js/app-a7add89014.js"></script>
 </head>
@@ -62,17 +57,17 @@
                             </a>
                         </li>
                         <li class="nav-item col-4 col-lg-auto">
-                            <a class="nav-link py-2 px-0 px-lg-2" href="https://nccroptool.toolforge.org/mass">
+                            <a class="nav-link py-2 px-0 px-lg-2" href="/mass">
                                 <span class="navtitles">Mass Upload</span>
                             </a>
                         </li>
                         <li class="nav-item col-4 col-lg-auto">
-                            <a class="nav-link py-2 px-0 px-lg-2" href="https://nccroptool.toolforge.org/c2ncc/">
+                            <a class="nav-link py-2 px-0 px-lg-2" href="/c2ncc">
                                 <span class="navtitles">Commons to NCCommons</span>
                             </a>
                         </li>
                         <li class="nav-item col-4 col-lg-auto">
-                            <a class="nav-link py-2 px-0 px-lg-2" href="https://github.com/MrIbrahem/nccroptool"
+                            <a class="nav-link py-2 px-0 px-lg-2" href="https://github.com/MrIbrahem/Multi-CropTool"
                                 target="_blank">
                                 <span class="navtitles">Github</span>
                             </a>
@@ -488,8 +483,8 @@
                                                 </p>
 
                                                 <p
-                                                ng-show="currentUrlParams.site == 'nccommons.org' && overwrite=='overwrite'">
-                                                <i class="fa fa-warning"></i>
+                                                    ng-show="currentUrlParams.site == 'commons.wikimedia.org' && overwrite=='overwrite'">
+                                                    <i class="fa fa-warning"></i>
                                                     <span translate
                                                         translate-value-url="https://commons.wikimedia.org/wiki/Special:MyLanguage/Commons:Overwriting existing files">previewform-overwrite-policy</span>
                                                 </p>
@@ -522,7 +517,7 @@
                                                                     translate>previewform-new-title-exists-confirm-overwrite</span>
                                                             </label>
                                                             <p
-                                                                ng-show="currentUrlParams.site == 'nccommons.org' && confirmOverwrite">
+                                                                ng-show="currentUrlParams.site == 'commons.wikimedia.org' && confirmOverwrite">
                                                                 <i class="fa fa-warning"></i>
                                                                 <span translate
                                                                     translate-value-url="https://commons.wikimedia.org/wiki/Special:MyLanguage/Commons:Overwriting existing files">previewform-overwrite-policy</span>
@@ -643,9 +638,9 @@
             </div>
         </div>
     </main>
-    <footer>
+    <footer class="footer mt-auto py-3">
         <span>
-            <a href="//commons.wikimedia.org/wiki/CropTool">Tutorial</a>
+            <a href="https://commons.wikimedia.org/wiki/Commons:CropTool">Tutorial</a>
             •
             <a href="//github.com/danmichaelo/croptool">Report issues</a>
         </span>
