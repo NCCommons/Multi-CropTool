@@ -15,11 +15,11 @@ $ini = parse_ini_file($inifile);
 //---
 if ($ini === false) {
     header("HTTP/1.1 500 Internal Server Error");
-    echo "The ini file:($inifile) could not be read";
+    error_log("Failed to read ini file: $inifile");
+    echo "Server configuration error. Please contact the administrator.";
     exit(0);
 }
 if (
-    !isset($ini['agent']) ||
     !isset($ini['consumerKey']) ||
     !isset($ini['consumerSecret'])
 ) {
